@@ -1,0 +1,25 @@
+{
+  "name": "sassfunc",
+  "engines": {
+    "node": "^16.14.0",
+    "npm": "^8.5.3"
+  },
+  "type": "module",
+  "scripts": {
+    "stylelint": "stylelint 'src/scss/**/*.scss' --fix",
+    "sass": "sass src/scss/style.scss:dist/css/style.css -s compressed --no-source-map",
+    "postcss": "postcss dist/css/style.css -o dist/css/style.css",
+    "build": "npm run stylelint & npm run sass & npm run postcss"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.8",
+    "postcss-cli": "^9.1.0",
+    "postcss-combine-media-query": "^1.0.1",
+    "postcss-scss": "^4.0.3",
+    "sass": "^1.49.9",
+    "stylelint": "^14.5.3",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-standard": "^25.0.0"
+  }
+}
