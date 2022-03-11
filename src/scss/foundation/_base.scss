@@ -1,0 +1,10 @@
+@use "_variable" as v;
+@use "../lib/mixins/_index" as *;
+@use "../lib/functions/_index" as *;
+
+$pcFontSize: map-get(v.$defaultsFontSize, "pc");
+$spFontSize: map-get(v.$defaultsFontSize, "sp");
+
+html {
+  @include font($pcFontSize, $spFontSize, "px");
+}

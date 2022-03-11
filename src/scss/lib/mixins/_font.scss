@@ -1,0 +1,30 @@
+@use "_media" as *;
+@use "../../foundation/_variable" as v;
+
+@function calc-font($val, $base, $unit) {
+  $fz: null;
+
+  @if $unit == "px" {
+    $fz: #{$val + px};
+  }
+
+  @else {
+    $fz: #{$val / $base + $unit};
+  }
+
+  @return $fz;
+}
+
+@mixin font($pcVal: null, $spVal: null, $unit: rem) {
+  @if ($pcVal) {
+    @include media(md) {
+      font-size: calc-font($pcVal, map-get(v.$defaultsFontSize, "pc"), $unit);
+    }
+  }
+
+  @if ($spVal) {
+    @include media(sm) {
+      font-size: calc-font($spVal, map-get(v.$defaultsFontSize, "sp"), $unit);
+    }
+  }
+}

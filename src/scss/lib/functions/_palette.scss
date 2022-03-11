@@ -1,0 +1,33 @@
+/* Color palette variation
+  [key - value]
+    ...higher light...
+    l2 - light-2
+    l1 - light-1
+    default
+    d1 - dark-1
+    d2 - dark-2
+    ...higher dark...
+
+  [sample]
+    "black": (
+      "l2": #999,
+      "l1": #666,
+      "default": #333,
+      "d1": #111,
+      "d2": #000,
+    )
+*/
+
+$palettes: (
+  "black": (
+    "l2": red,
+    "l1": blue,
+    "default": green,
+    "d1": orange,
+    "d2": purple,
+  ),
+);
+
+@function palette($group, $val: "default") {
+  @return map-get(map-get($palettes, $group), $val);
+}
