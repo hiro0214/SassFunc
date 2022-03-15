@@ -8,3 +8,9 @@ $spFontSize: map-get(v.$defaultsFontSize, "sp");
 html {
   @include font($pcFontSize, $spFontSize, "px");
 }
+
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, Arial, sans-serif;
+  color: palette("black");
+  background-color: palette("gray");
+}

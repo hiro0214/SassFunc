@@ -11,27 +11,19 @@
     @media #{$max} {
       @content;
     }
-  }
-
-  @else if $bp == xl {
+  } @else if $bp == xl {
     @media #{$xl} {
       @content;
     }
-  }
-
-  @else if $bp == lg {
+  } @else if $bp == lg {
     @media #{$lg} {
       @content;
     }
-  }
-
-  @else if $bp == md {
+  } @else if $bp == md {
     @media #{$md} {
       @content;
     }
-  }
-
-  @else if $bp == sm {
+  } @else if $bp == sm {
     @media #{$sm} {
       @content;
     }

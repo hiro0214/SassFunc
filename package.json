@@ -6,20 +6,21 @@
   },
   "type": "module",
   "scripts": {
-    "start:pug": "pug src/pug/ -o dist/ --hierarchy -P -w",
-    "start:sass": "sass src/scss/style.scss:dist/css/style.css -s compressed --no-source-map -w",
-    "build:pug": "pug src/pug/ -o dist/ --hierarchy -P",
-    "sass": "sass src/scss/style.scss:dist/css/style.css -s compressed --no-source-map",
-    "postcss": "postcss dist/css/style.css -o dist/css/style.css",
+    "start:pug": "pug src/ -o dist/ --hierarchy -P -w",
+    "start:sass": "sass src/assets/style.scss:dist/assets/css/style.css -s compressed --no-source-map -w",
+    "build:pug": "pug src/ -o dist/ --hierarchy -P",
+    "sass": "sass src/assets/style.scss:dist/assets/css/style.css -s compressed --no-source-map",
+    "postcss": "postcss dist/assets/css/style.css -o dist/assets/css/style.css",
     "build:scss": "npm run sass && npm run postcss",
     "start:server": "browser-sync start -s dist -f dist --port 8080 --no-notify",
-    "stylelint": "stylelint 'src/scss/**/*.scss' --fix",
+    "stylelint": "stylelint 'src/**/*.{css,scss,sass}' --fix",
     "start": "rimraf dist && npm-run-all -p start:*",
     "build": "rimraf dist && npm run stylelint && npm-run-all -p build:*"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
     "browser-sync": "^2.27.7",
+    "cssnano": "^5.1.4",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.8",
     "postcss-cli": "^9.1.0",
@@ -30,7 +31,10 @@
     "rimraf": "^3.0.2",
     "sass": "^1.49.9",
     "stylelint": "^14.5.3",
+    "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recess-order": "^3.0.0",
-    "stylelint-config-standard": "^25.0.0"
+    "stylelint-config-recommended-scss": "^5.0.2",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-prettier": "^2.0.0"
   }
 }

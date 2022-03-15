@@ -1,0 +1,13 @@
+@use "../../lib/functions/_index" as *;
+@use "../../lib/mixins/_index" as *;
+
+.c-terms {
+  height: 200px;
+  overflow-y: auto;
+  border: 1px solid palette("border", "d1");
+  border-radius: 4px;
+  @include rem("pt", 14, 14);
+  @include rem("pl", 14, 14);
+  @include rem("pr", 14, 14);
+  @include rem("pb", 14, 14);
+}

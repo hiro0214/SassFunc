@@ -1,0 +1,18 @@
+@use "../../lib/functions/_index" as *;
+@use "../../lib/mixins/_index" as *;
+
+.c-btn {
+  @include rem("pt", 10, 10);
+  @include rem("pb", 10, 10);
+  @include font(16, 16);
+  color: #fff;
+  text-align: center;
+  background: palette("blue");
+  border-radius: 8px;
+  @include media(md) {
+    min-width: 200px;
+  }
+  @include media(sm) {
+    width: 100%;
+  }
+}

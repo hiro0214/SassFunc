@@ -1,0 +1,20 @@
+$palettes: (
+  "black": (
+    "default": #3a3f4b,
+  ),
+  "gray": (
+    "default": #f6f6f6,
+    "l1": #f9f9fa,
+  ),
+  "blue": (
+    "default": #0f59eb,
+  ),
+  "border": (
+    "default": #dee1e5,
+    "d1": #cfd3da,
+  ),
+);
+
+@function palette($group, $val: "default") {
+  @return map-get(map-get($palettes, $group), $val);
+}

@@ -27,10 +27,22 @@ $properties: (
   $property: get-property($set);
 
   @if ($pcVal) {
-    #{$property}: calc-size($pcVal, map-get(v.$defaultsFontSize, "pc"), $unit);
+    @include media(md) {
+      #{$property}: calc-size(
+        $pcVal,
+        map-get(v.$defaultsFontSize, "pc"),
+        $unit
+      );
+    }
   }
 
   @if ($spVal) {
-    #{$property}: calc-size($spVal, map-get(v.$defaultsFontSize, "sp"), $unit);
+    @include media(sm) {
+      #{$property}: calc-size(
+        $spVal,
+        map-get(v.$defaultsFontSize, "sp"),
+        $unit
+      );
+    }
   }
 }

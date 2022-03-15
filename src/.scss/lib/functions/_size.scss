@@ -4,7 +4,7 @@
   @if $unit == "px" {
     $size: #{$val + px};
   } @else {
-    $size: #{$val / $base + $unit};
+    $size: #{calc($val / $base) + $unit};
   }
 
   @return $size;
