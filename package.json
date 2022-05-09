@@ -1,8 +1,8 @@
 {
   "name": "sassfunc",
   "engines": {
-    "node": "^16.14.0",
-    "npm": "^8.5.3"
+    "node": "16.14.0",
+    "npm": "^8.6.0"
   },
   "type": "module",
   "scripts": {
