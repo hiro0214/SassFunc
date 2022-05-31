@@ -5,10 +5,12 @@
 $properties: (
   "w": "width",
   "h": "height",
+  "m": "margin",
   "mt": "margin-top",
   "ml": "margin-left",
   "mr": "margin-right",
   "mb": "margin-bottom",
+  "p": "padding",
   "pt": "padding-top",
   "pl": "padding-left",
   "pr": "padding-right",
@@ -28,21 +30,29 @@ $properties: (
 
   @if ($pcVal) {
     @include media(md) {
-      #{$property}: calc-size(
-        $pcVal,
-        map-get(v.$defaultsFontSize, "pc"),
-        $unit
-      );
+      @if $pcVal == "f" {
+        #{$property}: 100%;
+      } @else {
+        #{$property}: calc-size(
+          $pcVal,
+          map-get(v.$defaultsFontSize, "pc"),
+          $unit
+        );
+      }
     }
   }
 
   @if ($spVal) {
     @include media(sm) {
-      #{$property}: calc-size(
-        $spVal,
-        map-get(v.$defaultsFontSize, "sp"),
-        $unit
-      );
+      @if $spVal == "f" {
+        #{$property}: 100%;
+      } @else {
+        #{$property}: calc-size(
+          $spVal,
+          map-get(v.$defaultsFontSize, "sp"),
+          $unit
+        );
+      }
     }
   }
 }
